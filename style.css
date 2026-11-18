@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./Assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+    padding: 3rem;
+}
+
+.child-1 {
+    text-align: center;
+
+    & .heading-1 {
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        backdrop-filter: blur(10px);
+        border: .1rem solid black;
+        color: white;
+        font-family: "Carter One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: 1rem;
+
+        &:hover {
+            text-shadow: 1px 1px 5px black;
+        }
+    }
+
+    & .heading-2 {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            background-color: white;
+            height: 10%;
+            border-radius: 1rem;
+        }
+    }
+
+}
+
+.child-2 {
+    background-color: white;
+    border-radius: 2%;
+    box-shadow: 6px 5px 7px 2px black;
+    padding: 3rem 1rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    gap: .9rem;
+
+    & #pic {
+        width: 50%;
+        height: auto;
+        border-radius: 60%;
+    }
+
+    & #name {
+        font-size: 1.4rem;
+        color: green;
+    }
+
+    & #gif-icon {
+        & #giff {
+            padding: 0;
+            margin: 0;
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (width <= 830px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
